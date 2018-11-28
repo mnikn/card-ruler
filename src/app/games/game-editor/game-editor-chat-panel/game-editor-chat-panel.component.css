@@ -1,0 +1,8 @@
+.ui.inverted.segment {
+  background: #1B1C1D;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.chat-panel {
+  width: 250px;
+}
