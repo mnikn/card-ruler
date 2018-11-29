@@ -1,0 +1,18 @@
+<div>
+  <div class="ui relaxed divided list">
+    <h5>
+      <i class="tiny add icon"></i>
+      {{resources.name}}
+    </h5>
+    <div class="item" *ngFor="let resource of resources.data">
+      <span style="display: flex">
+        {{resource.name}}
+        <i appDeleteItem (deleteItem)="deleteResource(resource.id)" class="tiny delete icon"
+           style="margin-left: auto"></i>
+      </span>
+    </div>
+    <div class="item" appAddNewItem (createItem)="createResource()">
+      添加新的...
+    </div>
+  </div>
+</div>

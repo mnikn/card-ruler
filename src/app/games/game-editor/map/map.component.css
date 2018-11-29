@@ -1,3 +1,10 @@
 .map {
+  display: flex;
+  flex-direction: row;
+  background: darkgray;
+}
+
+canvas {
+  flex-grow: 1;
 }
 

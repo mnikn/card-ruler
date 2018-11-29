@@ -5,16 +5,22 @@ import { GameEditorComponent } from './game-editor/game-editor.component';
 import { ToolboxPanelComponent } from './game-editor/map/toolbox-panel/toolbox-panel.component';
 import { InteractivePanelComponent } from './game-editor/interactive-panel/interactive-panel.component';
 import { MapComponent } from './game-editor/map/map.component';
+import { ResourcesComponent } from './game-editor/interactive-panel/resources/resources.component';
+import { ResourceListComponent } from './game-editor/interactive-panel/resources/resource-list/resource-list.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    CoreModule
   ],
   declarations: [
     GameEditorComponent,
     ToolboxPanelComponent,
     InteractivePanelComponent,
-    MapComponent],
+    MapComponent,
+    ResourcesComponent,
+    ResourceListComponent],
   exports: [GameEditorComponent]
 })
 
