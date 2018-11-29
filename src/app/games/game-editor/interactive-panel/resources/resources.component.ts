@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ResourcesService } from './resources.service';
+import { ResourceCollection } from './resource-collection';
 
 @Component({
   selector: 'app-game-editor-interactive-panel-resources',
@@ -8,14 +9,14 @@ import { ResourcesService } from './resources.service';
 })
 export class ResourcesComponent implements OnInit {
 
-  resourceCollection: any[] = [];
+  resourceCollections: ResourceCollection[] = [];
 
   constructor(private dataService: ResourcesService) {
   }
 
   ngOnInit() {
-    this.dataService.getResourceCollection().subscribe((resources) => {
-      this.resourceCollection = resources;
+    this.dataService.getResourceCollections().subscribe((resources) => {
+      this.resourceCollections = resources;
     });
   }
 

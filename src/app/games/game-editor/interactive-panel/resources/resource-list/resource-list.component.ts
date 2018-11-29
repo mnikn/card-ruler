@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ResourcesService } from '../resources.service';
+import { Resource } from '../resource';
+import { ResourceCollection } from '../resource-collection';
 
 @Component({
   selector: 'app-game-editor-interactive-panel-resource-list',
@@ -8,7 +10,7 @@ import { ResourcesService } from '../resources.service';
 })
 export class ResourceListComponent implements OnInit {
 
-  @Input() resources: any = {data: []};
+  @Input() resourceCollection: ResourceCollection = new ResourceCollection();
 
   constructor(public dataService: ResourcesService) {
   }
@@ -17,16 +19,19 @@ export class ResourceListComponent implements OnInit {
   }
 
   createResource(): void {
-    const index = this.resources.data.length + 1;
-    const newItem = {
-      id: index,
-      name: this.resources.name + index
-    };
-    this.dataService.createNewResource(this.resources.id, newItem).subscribe();
+    const index = this.resourceCollection.data.length + 1;
+    const newItem = new Resource();
+    newItem.id = index;
+    newItem.name = this.resourceCollection.name + index;
+    this.dataService.createNewResource(this.resourceCollection.id, newItem).subscribe();
   }
 
   deleteResource(resourceId: number): void {
-    this.dataService.deleteResource(this.resources.id, resourceId).subscribe();
+    this.dataService.deleteResource(this.resourceCollection.id, resourceId).subscribe();
+  }
+
+  editResource(resource: Resource): void {
+
   }
 
 }

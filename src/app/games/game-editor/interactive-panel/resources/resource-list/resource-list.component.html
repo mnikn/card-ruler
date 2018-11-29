@@ -1,11 +1,11 @@
 <div>
-  <div class="ui relaxed divided list">
-    <h5>
-      <i class="tiny add icon"></i>
-      {{resources.name}}
-    </h5>
-    <div class="item" *ngFor="let resource of resources.data">
-      <span style="display: flex">
+  <h5>
+    <i class="tiny add icon"></i>
+    {{resourceCollection.name}}
+  </h5>
+  <div class="ui relaxed divided list" style="padding-left: 16px">
+    <div class="item" *ngFor="let resource of resourceCollection.data">
+      <span appEditItem (editItem)="editResource(resource)" style="display: flex;">
         {{resource.name}}
         <i appDeleteItem (deleteItem)="deleteResource(resource.id)" class="tiny delete icon"
            style="margin-left: auto"></i>
