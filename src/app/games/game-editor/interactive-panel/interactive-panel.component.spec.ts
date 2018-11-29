@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameEditorChatPanelComponent } from './game-editor-chat-panel.component';
+import { InteractivePanelComponent } from './interactive-panel.component';
 
 describe('GameEditorChatPanelComponent', () => {
-  let component: GameEditorChatPanelComponent;
-  let fixture: ComponentFixture<GameEditorChatPanelComponent>;
+  let component: InteractivePanelComponent;
+  let fixture: ComponentFixture<InteractivePanelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameEditorChatPanelComponent ]
+      declarations: [InteractivePanelComponent]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GameEditorChatPanelComponent);
+    fixture = TestBed.createComponent(InteractivePanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

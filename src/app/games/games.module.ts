@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { GameEditorComponent } from './game-editor/game-editor.component';
-import { GameEditorToolboxPanelComponent } from './game-editor/game-editor-toolbox-panel/game-editor-toolbox-panel.component';
-import { GameEditorChatPanelComponent } from './game-editor/game-editor-chat-panel/game-editor-chat-panel.component';
-import { GameEditorMapComponent } from './game-editor/game-editor-map/game-editor-map.component';
+import { ToolboxPanelComponent } from './game-editor/map/toolbox-panel/toolbox-panel.component';
+import { InteractivePanelComponent } from './game-editor/interactive-panel/interactive-panel.component';
+import { MapComponent } from './game-editor/map/map.component';
 
 @NgModule({
   imports: [
@@ -11,9 +12,9 @@ import { GameEditorMapComponent } from './game-editor/game-editor-map/game-edito
   ],
   declarations: [
     GameEditorComponent,
-    GameEditorToolboxPanelComponent,
-    GameEditorChatPanelComponent,
-    GameEditorMapComponent],
+    ToolboxPanelComponent,
+    InteractivePanelComponent,
+    MapComponent],
   exports: [GameEditorComponent]
 })
 

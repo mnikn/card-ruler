@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameEditorMapComponent } from './game-editor-map.component';
+import { ToolboxPanelComponent } from './toolbox-panel.component';
 
-describe('GameEditorMapComponent', () => {
-  let component: GameEditorMapComponent;
-  let fixture: ComponentFixture<GameEditorMapComponent>;
+describe('GameEditorToolboxPanelComponent', () => {
+  let component: ToolboxPanelComponent;
+  let fixture: ComponentFixture<ToolboxPanelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameEditorMapComponent ]
+      declarations: [ToolboxPanelComponent]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GameEditorMapComponent);
+    fixture = TestBed.createComponent(ToolboxPanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
