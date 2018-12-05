@@ -2,17 +2,24 @@
   <i class="close icon"></i>
   <div class="header">
     <span>{{character.name}}</span>
-    <button class="ui circular icon button" style="margin-left: 4px">
+    <button *ngIf="showMode === 'info'"
+            class="ui circular icon button"
+            style="margin-left: 4px"
+            (click)="changeMode('edit')">
       <i class="edit icon"></i>
     </button>
   </div>
   <div class="character-info">
-  </div>
-  <div class="actions">
-    <div class="ui positive right button">
-      确定
+    <div *ngIf="showMode === 'edit'">
+      <app-character-editor [character]="character">
+      </app-character-editor>
     </div>
-    <div class="ui black deny button">
+  </div>
+  <div class="actions" *ngIf="showMode === 'edit'">
+    <div class="ui positive right button" (click)="saveChanges()">
+      保持更改
+    </div>
+    <div class="ui black deny button" (click)="changeMode('info')">
       取消
     </div>
   </div>

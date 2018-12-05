@@ -1,0 +1,15 @@
+<form class="ui form" [formGroup]="characterForm">
+  <div *ngFor="let row of characterForm.rows">
+    <div [ngClass]="row.classColumnNumber + ' fields'">
+      <div class="field" *ngFor="let control of row.controls">
+        <label>
+          {{control.label}}
+          <input [formControlName]="control.id"
+                 [type]="control.controlType"
+                 [placeholder]="control.placeholder"
+                 [(value)]="control.value">
+        </label>
+      </div>
+    </div>
+  </div>
+</form>
