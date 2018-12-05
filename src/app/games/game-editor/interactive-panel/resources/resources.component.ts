@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ResourcesService } from './resources.service';
-import { ResourceCollection } from './resource-collection';
+import { ResourceCollection } from './shared/resource-collection';
 
 @Component({
   selector: 'app-game-editor-interactive-panel-resources',

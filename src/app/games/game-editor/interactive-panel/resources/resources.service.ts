@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash';
-import { ResourceCollection } from './resource-collection';
-import { Resource } from './resource';
+import { ResourceCollection } from './shared/resource-collection';
+import { Resource } from './shared/resource';
 
 
 @Injectable({

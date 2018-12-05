@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ResourcesService } from '../resources.service';
-import { Resource } from '../resource';
-import { ResourceCollection } from '../resource-collection';
+import { Resource } from '../shared/resource';
+import { ResourceCollection } from '../shared/resource-collection';
+import { CharacterDialogComponent } from '../character-dialog/character-dialog.component';
 
 @Component({
   selector: 'app-game-editor-interactive-panel-resource-list',
@@ -11,6 +12,7 @@ import { ResourceCollection } from '../resource-collection';
 export class ResourceListComponent implements OnInit {
 
   @Input() resourceCollection: ResourceCollection = new ResourceCollection();
+  @ViewChild(CharacterDialogComponent) characterDialog;
 
   constructor(public dataService: ResourcesService) {
   }
@@ -31,7 +33,7 @@ export class ResourceListComponent implements OnInit {
   }
 
   editResource(resource: Resource): void {
-
+    this.characterDialog.showDialog(resource);
   }
 
 }

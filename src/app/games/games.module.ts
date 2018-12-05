@@ -8,6 +8,7 @@ import { MapComponent } from './game-editor/map/map.component';
 import { ResourcesComponent } from './game-editor/interactive-panel/resources/resources.component';
 import { ResourceListComponent } from './game-editor/interactive-panel/resources/resource-list/resource-list.component';
 import { CoreModule } from '../core/core.module';
+import { CharacterDialogComponent } from './game-editor/interactive-panel/resources/character-dialog/character-dialog.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { CoreModule } from '../core/core.module';
     InteractivePanelComponent,
     MapComponent,
     ResourcesComponent,
-    ResourceListComponent],
+    ResourceListComponent,
+    CharacterDialogComponent],
   exports: [GameEditorComponent]
 })
 
