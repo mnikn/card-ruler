@@ -3,11 +3,20 @@
     <div [ngClass]="row.classColumnNumber + ' fields'">
       <div class="field" *ngFor="let control of row.controls">
         <label>
-          {{control.label}}
-          <input [formControlName]="control.id"
+          <span>{{control.label}}</span>
+          <input *ngIf="control.controlType === 'text' || control.controlType === 'number'"
+                 [formControlName]="control.id"
                  [type]="control.controlType"
                  [placeholder]="control.placeholder"
                  [(value)]="control.value">
+          <select *ngIf="control.controlType === 'select'"
+                  [formControlName]="control.id"
+                  class="ui dropdown"
+                  [(ngModel)]="control.value">
+            <option *ngFor="let option of control.options" [value]="option.id">
+              {{option.label}}
+            </option>
+          </select>
         </label>
       </div>
     </div>
