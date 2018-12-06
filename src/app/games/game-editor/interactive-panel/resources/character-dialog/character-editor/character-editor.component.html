@@ -1,7 +1,8 @@
 <form class="ui form" [formGroup]="characterForm">
   <div *ngFor="let row of characterForm.rows">
     <div [ngClass]="row.classColumnNumber + ' fields'">
-      <div class="field" *ngFor="let control of row.controls">
+      <div class="field"
+           *ngFor="let control of row.controls">
         <label>
           <span>{{control.label}}</span>
           <input *ngIf="control.controlType === 'text' || control.controlType === 'number'"
@@ -11,7 +12,8 @@
                  [(value)]="control.value">
           <select *ngIf="control.controlType === 'select'"
                   [formControlName]="control.id"
-                  class="ui dropdown"
+                  class="ui fluid selection dropdown"
+                  [multiple]="control.isMultiple? 'multiple' : ''"
                   [(ngModel)]="control.value">
             <option *ngFor="let option of control.options" [value]="option.id">
               {{option.label}}
@@ -21,4 +23,24 @@
       </div>
     </div>
   </div>
+  <div class="field">
+    <div class="ui accordion">
+      <div class="active title">
+        <i class="dropdown icon"></i>
+        <h5 style="margin-right: 12px; display: inline">
+          职业
+        </h5>
+        <div class="ui basic buttons">
+          <div *ngFor="let profession of character.professions"
+               class="ui disabled button">
+            {{profession.label + '(' + profession.level + ')'}}
+          </div>
+        </div>
+      </div>
+      <div class="active content">
+        <p>Professions</p>
+      </div>
+    </div>
+  </div>
 </form>
+

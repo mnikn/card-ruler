@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 import { AbstractControlOptions, AsyncValidatorFn, FormControl, ValidatorFn } from '@angular/forms';
 
 export class AppFormControl extends FormControl {
+
   constructor(formState?: any,
               validatorOrOpts?: ValidatorFn | ValidatorFn[] | AbstractControlOptions | null,
               asyncValidator?: AsyncValidatorFn | AsyncValidatorFn[] | null,
@@ -12,6 +13,8 @@ export class AppFormControl extends FormControl {
   }
 
   private _id: string;
+
+  private _isDisabled = false;
 
   get id(): string {
     return this._id;
@@ -49,5 +52,13 @@ export class AppFormControl extends FormControl {
 
   set label(value: string) {
     this._label = value;
+  }
+
+  get isDisabled(): boolean {
+    return this._isDisabled;
+  }
+
+  set isDisabled(value: boolean) {
+    this._isDisabled = value;
   }
 }

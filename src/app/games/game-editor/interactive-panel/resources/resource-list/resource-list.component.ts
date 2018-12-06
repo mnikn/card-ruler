@@ -3,6 +3,7 @@ import { ResourcesService } from '../resources.service';
 import { Resource } from '../shared/resource';
 import { ResourceCollection } from '../shared/resource-collection';
 import { CharacterDialogComponent } from '../character-dialog/character-dialog.component';
+import { Character } from '../shared/character/character';
 
 @Component({
   selector: 'app-game-editor-interactive-panel-resource-list',
@@ -22,7 +23,10 @@ export class ResourceListComponent implements OnInit {
 
   createResource(): void {
     const index = this.resourceCollection.data.length + 1;
-    const newItem = new Resource();
+    let newItem = null;
+    if (this.resourceCollection.type === 'character') {
+      newItem = new Character();
+    }
     newItem.id = index;
     newItem.name = this.resourceCollection.name + index;
     this.dataService.createNewResource(this.resourceCollection.id, newItem).subscribe();
@@ -33,7 +37,7 @@ export class ResourceListComponent implements OnInit {
   }
 
   editResource(resource: Resource): void {
-    this.characterDialog.showDialog(resource);
+    this.characterDialog.showDialog(<Character>resource);
   }
 
 }

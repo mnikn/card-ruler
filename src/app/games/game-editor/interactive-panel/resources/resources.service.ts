@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import * as _ from 'lodash';
 import { ResourceCollection } from './shared/resource-collection';
 import { Resource } from './shared/resource';
+import { Character } from './shared/character/character';
 
 
 @Injectable({
@@ -20,8 +21,8 @@ export class ResourcesService {
       const collection = new ResourceCollection();
       collection.id = 1;
       collection.name = '角色';
-      collection.type = 'player';
-      const resource = new Resource();
+      collection.type = 'character';
+      const resource = new Character();
       resource.id = 1;
       resource.name = '角色1';
       collection.data.push(resource);
