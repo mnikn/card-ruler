@@ -27,8 +27,6 @@ export class CharacterEditorComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    console.log(this.character);
-    // this.character.professions = [Professions[0]];
     const nameControl = new AppFormTextControl('', null, null, {
       id: 'name',
       label: '姓名',
@@ -109,12 +107,7 @@ export class CharacterEditorComponent implements OnInit, AfterViewInit {
       allowAdditions: true
     });
 
-    $('.accordion')
-      .accordion({
-        selector: {
-          trigger: '.title .icon'
-        }
-      });
+    $('.accordion').accordion();
   }
 
 }
